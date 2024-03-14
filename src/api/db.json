@@ -1,0 +1,95 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "username": "lecturer1",
+        "role": "lecturer",
+        "full_name": "Nguyen Van A",
+        "email": "nguyenvana@example.com",
+        "phone": "0123456789",
+        "address": "123 ABC Street, XYZ Ward, HCMC",
+        "department": "Computer Science",
+        "language_preference": "English"
+      },
+      {
+        "id": 2,
+        "username": "admin1",
+        "role": "admin",
+        "full_name": "Admin",
+        "email": "admin@example.com",
+        "phone": "0987654321",
+        "address": "456 XYZ Street, ABC Ward, HCMC"
+      }
+    ],
+    "routes": [
+      {
+        "id": 1,
+        "route_name": "Route A",
+        "start_location": "ABC University",
+        "end_location": "XYZ University",
+        "departure_time": "07:00",
+        "arrival_time": "08:00",
+        "capacity": 50,
+        "status": "Active"
+      },
+      {
+        "id": 2,
+        "route_name": "Route B",
+        "start_location": "XYZ University",
+        "end_location": "ABC University",
+        "departure_time": "17:00",
+        "arrival_time": "18:00",
+        "capacity": 40,
+        "status": "Suspended"
+      }
+    ],
+    "buses": [
+      {
+        "id": 1,
+        "license_plate": "1234-56",
+        "bus_type": "Bus",
+        "capacity": 50,
+        "status": "Active"
+      },
+      {
+        "id": 2,
+        "license_plate": "7890-12",
+        "bus_type": "Minibus",
+        "capacity": 30,
+        "status": "Active"
+      }
+    ],
+    "route_registrations": [
+      {
+        "id": 1,
+        "user_id": 1,
+        "route_id": 1,
+        "registration_date": "2024-03-15",
+        "slot_time": "07:00"
+      },
+      {
+        "id": 2,
+        "user_id": 1,
+        "route_id": 2,
+        "registration_date": "2024-03-15",
+        "slot_time": "17:00"
+      }
+    ],
+    "notifications": [
+      {
+        "id": 1,
+        "user_id": 1,
+        "title": "sdoasdaih",
+        "message": "Departure time for Route A will be adjusted starting tomorrow.",
+        "timestamp": "2024-03-14 10:00:00"
+      },
+      {
+        "id": 2,
+        "user_id": 2,
+        "title": "sdoasdaih",
+        "message": "Route B has been suspended due to technical issues, please select another route.",
+        "timestamp": "2024-03-14 15:30:00"
+      }
+    ]
+  }
+  
