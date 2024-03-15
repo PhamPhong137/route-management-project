@@ -1,13 +1,11 @@
 import React from 'react'
 
-function Resgiter() {
+function Navbar() {
   return (
     <div>
       
-
-        
     </div>
   )
 }
 
-export default Resgiter
+export default Navbar
