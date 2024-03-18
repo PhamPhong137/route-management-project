@@ -6,6 +6,7 @@ import Resgiter from "./components/Resgiter";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import LecturerPage from "./components/LecturerPage";
 import Profile from "./components/Profile";
+import BookedBus from "./components/BookedBus";
 function App() {
   return (
     <div>
@@ -16,6 +17,8 @@ function App() {
           <Route path="/" element={<Login />}/>
           <Route path="/home" element={<LecturerPage />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/bookedbus" element={<BookedBus />} />
+
         </Routes>
       </Router>
     </div>

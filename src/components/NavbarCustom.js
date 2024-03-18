@@ -25,8 +25,8 @@ function NavbarCustom() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Booked Bus</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/bookedbus">Booked Bus</Nav.Link>
             
            
           </Nav>
