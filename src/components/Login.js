@@ -42,7 +42,7 @@ export default function Login() {
       (user) => user.email === email && user.password === password
     );
     if (user) {
-      localStorage.setItem("user", user);
+      localStorage.setItem("user", JSON.stringify(user));
       navigate("/home");
     } else {
       setMessage("Invalid email or password. Please try again.");
