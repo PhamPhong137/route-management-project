@@ -5,10 +5,13 @@
       "email": "phong@gmail.com",
       "password": "1",
       "role": "admin",
-      "full_name": "Pham Hong Phong",
-      "male":"Female",      
+      "firstName": "Pham Hong",
+      "lastName": "Phong",
+      "gender": "Male",
       "phone": "0987654321",
-      "address": "456 XYZ Street, ABC Ward, HCMC",
+      "birthday": "2003-07-13",
+      "img": "https://png.pngtree.com/element_our/20190604/ourmid/pngtree-user-avatar-boy-image_1482937.jpg",
+      "address": "Hoa Lac, Thach That",
       "department": "Computer Science",
       "language_preference": "Vietnamese"
     },
@@ -17,9 +20,12 @@
       "email": "hiep@gmail.com",
       "password": "1",
       "role": "lecturer",
-      "full_name": "Cao Duc Hiep",
-      "male":"Male",      
+      "firstName": "Cao Duc",
+      "lastName": "Hiep",
+      "gender": "Female",
       "phone": "0123456789",
+      "birthday": "2000-05-17",
+      "img": "https://png.pngtree.com/element_our/20190604/ourmid/pngtree-user-avatar-boy-image_1482937.jpg",
       "address": "123 ABC Street, XYZ Ward, HCMC",
       "department": "Computer Science",
       "language_preference": "English"
@@ -29,9 +35,12 @@
       "email": "tung@gmail.com",
       "password": "1",
       "role": "lecturer",
-      "full_name": "Tung Tung",
-      "male":"Male",      
+      "firstName": "Tung",
+      "lastName": "Tung",
+      "gender": "Male",
       "phone": "0987654321",
+      "birthday": "2000-01-01",
+      "img": "https://png.pngtree.com/element_our/20190604/ourmid/pngtree-user-avatar-boy-image_1482937.jpg",
       "address": "456 XYZ Street, ABC Ward, HCMC",
       "department": "Computer Science",
       "language_preference": "Vietnamese"
@@ -43,9 +52,6 @@
       "route_name": "Route A",
       "start_location": "ABC University",
       "end_location": "XYZ University",
-      "departure_time": "07:00",
-      "arrival_time": "08:00",
-      "capacity": 50,
       "status": "Active"
     },
     {
@@ -53,15 +59,13 @@
       "route_name": "Route B",
       "start_location": "XYZ University",
       "end_location": "ABC University",
-      "departure_time": "17:00",
-      "arrival_time": "18:00",
-      "capacity": 40,
       "status": "Suspended"
     }
   ],
   "buses": [
     {
       "id": 1,
+      "routeId": 1,
       "license_plate": "1234-56",
       "bus_type": "Bus",
       "capacity": 50,
@@ -69,10 +73,37 @@
     },
     {
       "id": 2,
+      "routeId": 1,
       "license_plate": "7890-12",
       "bus_type": "Minibus",
       "capacity": 30,
       "status": "Active"
+    }
+  ],
+  "slot": [
+    {
+      "id": 1,
+      "period": "morning",
+      "departure_time": "7:00",
+      "arrival_time": "8:00"
+    },
+    {
+      "id": 2,
+      "period": "morning",
+      "departure_time": "9:00",
+      "arrival_time": "10:00"
+    }
+  ],
+  "time_bus": [
+    {
+      "id": 1,
+      "bus_id": 1,
+      "slot_id": 1
+    },
+    {
+      "id": 2,
+      "bus_id": 1,
+      "slot_id": 1
     }
   ],
   "route_registrations": [
@@ -80,15 +111,13 @@
       "id": 1,
       "user_id": 1,
       "route_id": 1,
-      "registration_date": "2024-03-15",
-      "slot_time": "07:00"
+      "timestamp": "2024-03-14 10:00:00"
     },
     {
       "id": 2,
       "user_id": 1,
       "route_id": 2,
-      "registration_date": "2024-03-15",
-      "slot_time": "17:00"
+      "timestamp": "2024-03-14 10:00:00"
     }
   ],
   "notifications": [
