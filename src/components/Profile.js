@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 
 const Profile = () => {
-  let user;
+  
   const [profile, setProfile] = useState({
     firstName: "",
     lastName: "",
@@ -22,7 +22,7 @@ const Profile = () => {
   });
 
   useEffect(() => {
-    user = JSON.parse(localStorage.getItem("user"));
+   const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       setProfile(user);
     }
@@ -60,7 +60,9 @@ const Profile = () => {
 
   return (
     <>
-      <NavbarCustom />
+      <div style={{ height: "50px" }}>
+        <NavbarCustom />
+      </div>
       <ToastContainer />
       <Container>
         <Row className="mt-5">

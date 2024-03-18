@@ -15,9 +15,9 @@ function NavbarCustom() {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-secondary">
+    <Navbar expand="lg" className="bg-body-secondary" fixed="top">
       <Container fluid>
-        <Navbar.Brand href="#">FPT University Bus</Navbar.Brand>
+        <Navbar.Brand href="/home">FPT University Bus</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -26,20 +26,9 @@ function NavbarCustom() {
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
-            <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
+            <Nav.Link href="#action2">Booked Bus</Nav.Link>
+            
+           
           </Nav>
 
           <Form className="d-flex">
@@ -58,9 +47,7 @@ function NavbarCustom() {
             style={{ marginLeft: "40px" }}
           >
             <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-            <NavDropdown.Item href="">
-            Action 
-            </NavDropdown.Item>
+            <NavDropdown.Item href="">Action</NavDropdown.Item>
             <NavDropdown.Item href="">Action</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="/login" onClick={handleLogout}>
