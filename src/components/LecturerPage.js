@@ -66,7 +66,7 @@ function LecturerPage() {
           .filter((sbr) => sbr.slot_id === slot.id)
           .map((sbr) => {
             const busForSlot = buses.find((bus) => bus.id === sbr.bus_id);
-            return { ...busForSlot, slotId: sbr.id };
+            return { ...busForSlot, slotId: sbr.id,routeId: sbr.routeId };
           })
       )
       .filter((bus) => bus);
