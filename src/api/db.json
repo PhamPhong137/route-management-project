@@ -71,43 +71,37 @@
       "id": 1,
       "routeId": 2,
       "license_plate": "PP1",
-      "capacity": 50,
-      "slot": [1, 2, 3, 4, 5, 6]
+      "capacity": 50
     },
     {
       "id": 2,
       "routeId": 1,
       "license_plate": "PP2",
-      "capacity": 30,
-      "slot": [1]
+      "capacity": 30
     },
     {
       "id": 3,
       "routeId": 1,
       "license_plate": "PP3",
-      "capacity": 50,
-      "slot": []
+      "capacity": 50
     },
     {
       "id": 4,
       "routeId": 1,
       "license_plate": "PP4",
-      "capacity": 50,
-      "slot": []
+      "capacity": 50
     },
     {
       "id": 5,
       "routeId": 1,
       "license_plate": "PP5",
-      "capacity": 50,
-      "slot": []
+      "capacity": 50
     },
     {
       "id": 6,
       "routeId": 1,
       "license_plate": "PP6",
-      "capacity": 50,
-      "slot": []
+      "capacity": 50
     }
   ],
   "slots": [
@@ -123,93 +117,181 @@
       "week_day": "Tuesday",
       "period": "Morning",
       "departure_time": "7:00",
-      "arrival_time": "7:10"
+      "arrival_time": "7:30"
     },
     {
       "id": 3,
-      "week_day": "Sunday",
+      "week_day": "Wednesday",
       "period": "Morning",
       "departure_time": "7:00",
       "arrival_time": "8:00"
     },
     {
       "id": 4,
+      "week_day": "Thursday",
+      "period": "Morning",
+      "departure_time": "7:00",
+      "arrival_time": "8:00"
+    },
+    {
+      "id": 5,
+      "week_day": "Friday",
+      "period": "Morning",
+      "departure_time": "7:00",
+      "arrival_time": "8:00"
+    },
+    {
+      "id": 6,
+      "week_day": "Saturday",
+      "period": "Morning",
+      "departure_time": "7:00",
+      "arrival_time": "8:00"
+    },
+    {
+      "id": 7,
+      "week_day": "Sunday",
+      "period": "Morning",
+      "departure_time": "7:00",
+      "arrival_time": "8:00"
+    },
+    {
+      "id": 8,
+      "week_day": "Monday",
+      "period": "Morning",
+      "departure_time": "9:30",
+      "arrival_time": "10:00"
+    },
+    {
+      "id": 9,
+      "week_day": "Tuesday",
+      "period": "Morning",
+      "departure_time": "9:30",
+      "arrival_time": "10:00"
+    },
+    {
+      "id": 10,
       "week_day": "Wednesday",
       "period": "Morning",
       "departure_time": "9:30",
       "arrival_time": "10:00"
     },
     {
-      "id": 5,
+      "id": 11,
+      "week_day": "Thursday",
+      "period": "Morning",
+      "departure_time": "9:30",
+      "arrival_time": "10:00"
+    },
+    {
+      "id": 12,
       "week_day": "Friday",
       "period": "Morning",
       "departure_time": "9:30",
-      "arrival_time": "10:30"
+      "arrival_time": "10:00"
     },
     {
-      "id": 6,
-      "week_day": "Thursday",
+      "id": 13,
+      "week_day": "Saturday",
       "period": "Morning",
-      "departure_time": "12:00",
-      "arrival_time": "12:30"
+      "departure_time": "9:30",
+      "arrival_time": "10:00"
     },
     {
-      "id": 7,
-      "week_day": "Tuesday",
-      "period": "Afternoon",
+      "id": 14,
+      "week_day": "Sunday",
+      "period": "Morning",
+      "departure_time": "9:30",
+      "arrival_time": "10:00"
+    },
+    {
+      "id": 15,
+      "week_day": "Monday",
+      "period": "Morning",
       "departure_time": "13:00",
       "arrival_time": "14:00"
     },
     {
-      "id": 8,
-      "week_day": "Friday",
-      "period": "Afternoon",
-      "departure_time": "14:30",
-      "arrival_time": "15:20"
-    },
-    {
-      "id": 9,
-      "week_day": "Sarturday",
-      "period": "Afternoon",
-      "departure_time": "16:00",
-      "arrival_time": "17:30"
-    },
-    {
-      "id": 10,
+      "id": 16,
       "week_day": "Tuesday",
-      "period": "Afternoon",
-      "departure_time": "17:40",
-      "arrival_time": "18:30"
+      "period": "Morning",
+      "departure_time": "13:00",
+      "arrival_time": "14:00"
+    },
+    {
+      "id": 17,
+      "week_day": "Wednesday",
+      "period": " Morning",
+      "departure_time": "13:00",
+      "arrival_time": "14:00"
+    },
+    {
+      "id": 18,
+      "week_day": "Thursday",
+      "period": "Morning",
+      "departure_time": "13:00",
+      "arrival_time": "14:00"
+    },
+    {
+      "id": 19,
+      "week_day": "Friday",
+      "period": "Morning",
+      "departure_time": "13:00",
+      "arrival_time": "14:00"
+    },
+    {
+      "id": 20,
+      "week_day": "Saturday",
+      "period": "Morning",
+      "departure_time": "13:00",
+      "arrival_time": "14:00"
+    },
+    {
+      "id": 21,
+      "week_day": "Sunday",
+      "period": "Morning",
+      "departure_time": "13:00",
+      "arrival_time": "14:00"
+    }
+  ],
+  "slot_bus": [
+    {
+      "id": 1,
+      "slot_id": 1,
+      "bus_id": 5
+    },
+    {
+      "id": 2,
+      "slot_id": 1,
+      "bus_id": 2
+    },
+    {
+      "id": 3,
+      "slot_id": 5,
+      "bus_id": 5
+    },
+    {
+      "id": 4,
+      "slot_id": 2,
+      "bus_id": 6
+    },
+    {
+      "id": 5,
+      "slot_id": 3,
+      "bus_id": 3
     }
   ],
   "route_registrations": [
     {
       "id": 1,
-      "user_id": 1,
-      "route_id": 1,
-      "timestamp": "2024-03-14 10:00:00"
-    },
-    {
-      "id": 2,
-      "user_id": 1,
-      "route_id": 2,
-      "timestamp": "2024-03-14 10:00:00"
-    }
-  ],
-  "notifications": [
-    {
-      "id": 1,
-      "user_id": 1,
-      "title": "sdoasdaih",
-      "message": "Departure time for Route A will be adjusted starting tomorrow.",
-      "timestamp": "2024-03-14 10:00:00"
+      "user_id": 2,
+      "slot_bus": 1,
+      "timestamp": "2024-03-20 10:00:00"
     },
     {
       "id": 2,
       "user_id": 2,
-      "title": "sdoasdaih",
-      "message": "Route B has been suspended due to technical issues, please select another route.",
-      "timestamp": "2024-03-14 15:30:00"
+      "slot_bus": 2,
+      "timestamp": "2024-03-20 10:00:00"
     }
   ]
 }

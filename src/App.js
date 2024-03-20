@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import LecturerPage from "./components/LecturerPage";
 import Profile from "./components/Profile";
 import BookedBus from "./components/BookedBus";
+import Admin from "./components/Admin";
 function App() {
   return (
     <div>
@@ -18,6 +19,8 @@ function App() {
           <Route path="/home" element={<LecturerPage />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/bookedbus" element={<BookedBus />} />
+          <Route path="/admin" element={<Admin />} />
+
 
         </Routes>
       </Router>
