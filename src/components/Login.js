@@ -43,7 +43,7 @@ export default function Login() {
     );
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
-      user.role === "admin" ? navigate("/admin") : navigate("/home");
+      user.role === "admin" ? navigate("/admin/lecturer") : navigate("/home");
     } else {
       setMessage("Invalid email or password. Please try again.");
     }
