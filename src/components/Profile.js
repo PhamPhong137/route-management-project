@@ -35,6 +35,7 @@ const Profile = () => {
       [name]: value,
     }));
   };
+  
   const handleSave = async () => {
     const id = profile.id;
     await axios.put(`http://localhost:3000/users/${id}`, profile);

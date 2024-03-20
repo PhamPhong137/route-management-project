@@ -43,7 +43,7 @@ export default function Login() {
     );
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
-      navigate("/home");
+      user.role === "admin" ? navigate("/admin") : navigate("/home");
     } else {
       setMessage("Invalid email or password. Please try again.");
     }
@@ -92,8 +92,8 @@ export default function Login() {
               onSubmit={handleSubmit}
               sx={{ mt: 1 }}
             >
-              <div style={{ color: "red" }}>{message}</div> 
-              
+              <div style={{ color: "red" }}>{message}</div>
+
               <TextField
                 margin="normal"
                 required
