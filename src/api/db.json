@@ -41,6 +41,23 @@
       "address": "456 XYZ Street, ABC Ward, HCMC",
       "department": "Computer Science",
       "language_preference": "Vietnamese"
+    },
+    {
+      "id": 4,
+      "email": "hoan@fpt.edu.vn",
+      "password": "1",
+      "role": "lecturer",
+      "first_name": "Thầy ",
+      "last_name": "Hoàn",
+      "male": "",
+      "phone": "",
+      "img": "https://w7.pngwing.com/pngs/78/788/png-transparent-computer-icons-avatar-business-computer-software-user-avatar-child-face-hand-thumbnail.png",
+      "address": "Hà nội, việt nam",
+      "department": "Công nghệ thông tin",
+      "language_preference": "",
+      "firstName": "thầy ",
+      "lastName": "Hoan",
+      "gender": "Male"
     }
   ],
   "routes": [
@@ -240,8 +257,50 @@
       "id": 21,
       "week_day": "Sunday",
       "period": "Morning",
+      "departure_time": "14:30",
+      "arrival_time": "15:00"
+    },
+    {
+      "week_day": "Wednesday",
+      "period": "Afternoon",
+      "departure_time": "16:00",
+      "arrival_time": "17:00",
+      "id": 22
+    },
+    {
+      "week_day": "Tuesday",
+      "period": "Afternoon",
       "departure_time": "13:00",
-      "arrival_time": "14:00"
+      "arrival_time": "14:00",
+      "id": 23
+    },
+    {
+      "week_day": "Saturday",
+      "period": "Afternoon",
+      "departure_time": "16:00",
+      "arrival_time": "17:00",
+      "id": 24
+    },
+    {
+      "week_day": "Sunday",
+      "period": "Afternoon",
+      "departure_time": "16:00",
+      "arrival_time": "17:00",
+      "id": 25
+    },
+    {
+      "week_day": "Tuesday",
+      "period": "Afternoon",
+      "departure_time": "17:40",
+      "arrival_time": "15:00",
+      "id": 26
+    },
+    {
+      "week_day": "Thursday",
+      "period": "Afternoon",
+      "departure_time": "16:00",
+      "arrival_time": "17:00",
+      "id": 27
     }
   ],
   "slot_bus": [
@@ -274,6 +333,36 @@
       "slot_id": 3,
       "bus_id": 3,
       "route_id": 3
+    },
+    {
+      "slot_id": 22,
+      "bus_id": 2,
+      "route_id": 2,
+      "id": 6
+    },
+    {
+      "slot_id": 22,
+      "bus_id": 4,
+      "route_id": 2,
+      "id": 7
+    },
+    {
+      "slot_id": 24,
+      "bus_id": 5,
+      "route_id": 1,
+      "id": 8
+    },
+    {
+      "slot_id": 26,
+      "bus_id": 3,
+      "route_id": 2,
+      "id": 9
+    },
+    {
+      "slot_id": 23,
+      "bus_id": 2,
+      "route_id": 2,
+      "id": 10
     }
   ],
   "route_registrations": [
@@ -281,13 +370,25 @@
       "id": 1,
       "user_id": 2,
       "slot_bus": 1,
-      "timestamp": "2024-03-20 10:00:00"
+      "timestamp": "2024-03-21 05:28:09"
     },
     {
       "id": 2,
       "user_id": 2,
-      "slot_bus": 2,
-      "timestamp": "2024-03-20 10:00:00"
+      "slot_bus": 4,
+      "timestamp": "2024-03-21 05:54:59"
+    },
+    {
+      "id": 4,
+      "user_id": 4,
+      "slot_bus": 4,
+      "timestamp": "2024-03-21 06:39:15"
+    },
+    {
+      "id": 5,
+      "user_id": 4,
+      "slot_bus": 5,
+      "timestamp": "2024-03-21 06:39:22"
     }
   ]
 }
