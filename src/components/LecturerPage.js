@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Table, Button, Card, Modal } from "react-bootstrap";
 import axios from "axios";
 import NavbarCustom from "./NavbarCustom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function LecturerPage() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -66,40 +68,82 @@ function LecturerPage() {
           .filter((sbr) => sbr.slot_id === slot.id)
           .map((sbr) => {
             const busForSlot = buses.find((bus) => bus.id === sbr.bus_id);
-            return { ...busForSlot, slotId: sbr.id,routeId: sbr.routeId };
+            return {
+              ...busForSlot,
+              slotId: sbr.id,
+              routeId: sbr.route_id,
+            };
           })
       )
       .filter((bus) => bus);
   }
   const checkIfUserBookedSlot = (slot_bus) => {
-    const userSlotRegistrations = routeRegistrations.filter(
+    const userSlotRegistrations = routeRegistrations.find(
       (registration) =>
         registration.user_id === user.id &&
         registration.slot_bus === slot_bus.slotId
     );
     console.log(userSlotRegistrations);
 
-    return userSlotRegistrations.length > 0;
+    return userSlotRegistrations?.id || false;
   };
 
-  const handleRegister = () => {
-    // Kiểm tra xem người dùng đã đặt slot hay chưa
+  const handleRegister = async () => {
     const hasBookedSlot = checkIfUserBookedSlot(selectedBuses);
 
     if (hasBookedSlot) {
       alert("Bạn đã đặt slot này rồi!");
     } else {
-      // Thực hiện hành động đặt slot ở đây
-      // ...
-      alert("Đăng ký thành công!");
+   
+      const { data } = await axios.post(
+        "http://localhost:3000/route_registrations",
+        {
+          id: routeRegistrations[routeRegistrations.length - 1]?.id + 1,
+          user_id: user.id,
+          slot_bus: selectedBuses.slotId,
+          // timestamp: Date.now(),
+          //get current date in javascript formula "2024-03-20 10:00:00"
+          timestamp: new Date().toISOString().slice(0, 19).replace("T", " "),
+        }
+      );
+      if (data)  toast.success('Register book slot successfully', {
+        position: "bottom-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        });
+      const newRouteRegistrations = [...routeRegistrations, data];
+      setRouteRegistrations(newRouteRegistrations);
       handleClose();
     }
   };
 
   const cancelSlotBus = (slot_bus) => {
-    
-  }
-  
+    console.log(slot_bus);
+    axios
+      .delete(`http://localhost:3000/route_registrations/${slot_bus}`)
+      .then(() => {
+        toast.success('Cancel slot bus successfully', {
+          position: "bottom-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          });
+        const newRouteRegistrations = routeRegistrations.filter(
+          (registration) => registration.id !== slot_bus
+        );
+        setRouteRegistrations(newRouteRegistrations);
+      });
+  };
+
   const entryBus = (time) =>
     weekDay.map((day) => (
       <td key={`${day}-${time}`}>
@@ -110,18 +154,18 @@ function LecturerPage() {
           return (
             <Card key={slot_bus.license_plate} className="m-1 p-2">
               <div>
-                {route.start_location} - {route.end_location}
+                {route?.start_location} - {route?.end_location}
               </div>
               <div>License Plate: {slot_bus.license_plate}</div>
 
               {checkIfUserBookedSlot(slot_bus) ? (
                 <Button
-                onClick={() => cancelSlotBus(slot_bus)}
-                className="mt-3"
-                variant="danger"
-              >
-                Cancel
-              </Button>
+                  onClick={() => cancelSlotBus(checkIfUserBookedSlot(slot_bus))}
+                  className="mt-3"
+                  variant="danger"
+                >
+                  Cancel
+                </Button>
               ) : (
                 <Button
                   onClick={() => handleShow(slot_bus)}
@@ -142,6 +186,7 @@ function LecturerPage() {
       <div style={{ height: "70px" }}>
         <NavbarCustom />
       </div>
+      <ToastContainer />
       <Table bordered>
         {/* show week_day */}
         <thead>
@@ -184,7 +229,6 @@ function LecturerPage() {
           </h4>
           <h6>License_plate: {selectedBuses.license_plate}</h6>
           <h6>Capacity: {selectedBuses.capacity}</h6>
-          <h6>Time: </h6>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
